@@ -22,6 +22,20 @@ Provides comprehensive analysis including:
 - `/analysis:src` - Analyze the src directory
 - `/analysis:.` - Analyze the entire project root
 
+#### [Commit Command](claude/commands/commit.md)
+- **Usage**: `/commit`
+- **Purpose**: Analyzes staged files and creates logical commit groups based on file relationships and changes
+
+Provides intelligent commit management including:
+- Automated analysis of staged changes
+- Logical grouping of related files
+- Multiple commits for different feature areas
+- Conventional commit message generation
+- No Claude attribution in commit messages
+
+**Examples:**
+- `/commit` - Analyze staged files and create grouped commits
+
 ### How to Use Commands
 
 1. **With Claude Code CLI**: Use the commands directly in your Claude Code session
