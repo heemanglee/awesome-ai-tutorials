@@ -15,6 +15,7 @@ When this command is executed, perform the following steps:
 1. **Check Git Status**
    - Verify we're in a git repository
    - Check if there are staged files ready to commit
+   - **IMPORTANT**: Only work with files that are already staged - do not stage additional files
 
 2. **Analyze Staged Changes**
    - Use `git diff --cached` to see staged changes
@@ -30,6 +31,7 @@ When this command is executed, perform the following steps:
    - For each group, create a separate commit
    - Generate appropriate commit messages based on the changes
    - Use conventional commit format when appropriate
+   - **IMPORTANT**: Do not include Claude Code attribution in commit messages
 
 ## Grouping Logic
 
@@ -55,7 +57,7 @@ Generate commit messages that:
 - Are concise but descriptive
 - Use conventional commit format when appropriate (feat:, fix:, refactor:, etc.)
 - Focus on the "what" and "why" rather than technical details
-- DO NOT include Claude attribution
+- **DO NOT include Claude Code attribution or any reference to Claude**
 
 ### Examples
 - `feat: add user authentication system`
@@ -82,17 +84,20 @@ Generate commit messages that:
    ```
 
 4. **Create Commits**
-   - Use `git reset HEAD <files>` to unstage files temporarily
-   - Use `git add <files>` to stage specific groups
+   - **ONLY work with files already staged** - do not stage new files
+   - Use `git reset HEAD <files>` to unstage files temporarily for grouping
+   - Use `git add <files>` to stage specific groups from the previously staged files
    - Use `git commit -m "<message>"` for each group
-   - Repeat for all groups
+   - Repeat for all groups until all originally staged files are committed
 
 ## Safety Measures
 
 - Always verify staged changes before committing
+- **Only commit files that were originally staged** - never stage additional files
 - Confirm with user if creating multiple commits
 - Show preview of planned commits before execution
 - Ensure no files are lost during the grouping process
+- Ensure all originally staged files are eventually committed
 
 ## Error Handling
 
