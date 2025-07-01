@@ -36,6 +36,21 @@ Provides intelligent commit management including:
 **Examples:**
 - `/commit` - Analyze staged files and create grouped commits
 
+#### [Plan Command](claude/commands/plan.md)
+- **Usage**: `/plan [problem description]` or `/plan:{path} [problem description]`
+- **Purpose**: Creates detailed solution plans in markdown format for technical problems
+
+Provides comprehensive problem-solving documentation including:
+- Problem analysis and root cause identification
+- Step-by-step solution approaches with code examples
+- Structured markdown documents with clear objectives
+- Custom path support for organized documentation
+- Template-based document generation
+
+**Examples:**
+- `/plan Database connection timeout errors in production` - Create plan in default docs/ directory
+- `/plan:troubleshooting/db Connection pool exhausted error` - Create plan in specific path
+
 ### How to Use Commands
 
 1. **With Claude Code CLI**: Use the commands directly in your Claude Code session
